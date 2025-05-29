@@ -4,18 +4,18 @@ import { restaurants } from "./data/mock";
 
 createRoot(document.getElementById("root")).render(
   <ul>
-    {restaurants.map((restaurant) => (
-      <li key={restaurant.id}>
-        <h2>{restaurant.name}</h2>
+    {restaurants.map(({ id, name, menu, reviews }) => (
+      <li key={id}>
+        <h2>{name}</h2>
         <h3>Menu</h3>
         <ul>
-          {restaurant.menu?.map((dish) => (
+          {menu?.map((dish) => (
             <li key={dish.id}>{dish.name}</li>
           ))}
         </ul>
         <h3>Reviews</h3>
         <ul>
-          {restaurant.reviews?.map((review) => (
+          {reviews?.map((review) => (
             <li key={review.id}>{review.text}</li>
           ))}
         </ul>
