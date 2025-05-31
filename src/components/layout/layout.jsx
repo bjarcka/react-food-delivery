@@ -4,11 +4,15 @@ import { restaurants } from "../../data/mock";
 export const Layout = () => {
   return (
     <>
-      <header></header>
+      <header>
+        APP HEADER <hr></hr>
+      </header>
       <main>
         <RestaurantsPage restaurants={restaurants} />
       </main>
-      <footer></footer>
+      <footer>
+        <hr></hr>APP FOOTER
+      </footer>
     </>
   );
 };
