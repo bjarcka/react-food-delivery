@@ -1,6 +1,3 @@
-import { RestaurantsPage } from "../restaurants-page/restaurants-page";
-import { restaurants } from "../../data/mock";
-
 export const Layout = ({ children }) => {
   return (
     <>

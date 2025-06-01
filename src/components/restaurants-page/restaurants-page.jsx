@@ -1,7 +1,8 @@
 import { Restaurant } from "../restaurant/restaurant";
 import { useState } from "react";
+import { restaurants } from "../../data/mock";
 
-export const RestaurantsPage = ({ restaurants }) => {
+export const RestaurantsPage = () => {
   const [activeId, setActiveId] = useState(restaurants[0].id);
 
   return (
