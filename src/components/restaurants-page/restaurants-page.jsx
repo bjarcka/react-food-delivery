@@ -1,6 +1,7 @@
 import { Restaurant } from "../restaurant/restaurant";
 import { useState } from "react";
 import { restaurants } from "../../data/mock";
+import { ReviewForm } from "../review-form/review-form";
 
 export const RestaurantsPage = () => {
   const [activeId, setActiveId] = useState(restaurants[0].id);
@@ -36,6 +37,7 @@ export const RestaurantsPage = () => {
             )
         )}
       </ul>
+      <ReviewForm />
     </div>
   );
 };
