@@ -24,23 +24,6 @@ export const RestaurantsPage = () => {
         })}
       </ul>
       <hr></hr>
-<<<<<<< HEAD
-      <ul>
-        {restaurants.map(
-          ({ id, name, menu, reviews }) =>
-            activeId === id && (
-              <Restaurant
-                id={id}
-                name={name}
-                menu={menu}
-                reviews={reviews}
-                key={id}
-              />
-            )
-        )}
-      </ul>
-      <ReviewForm />
-=======
       <div>
         <Restaurant
           id={restaurant.id}
@@ -50,7 +33,6 @@ export const RestaurantsPage = () => {
           key={restaurant.id}
         />
       </div>
->>>>>>> main
     </div>
   );
 };
