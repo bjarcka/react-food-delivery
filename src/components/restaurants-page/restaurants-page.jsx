@@ -4,6 +4,7 @@ import { restaurants } from "../../data/mock";
 
 export const RestaurantsPage = () => {
   const [activeId, setActiveId] = useState(restaurants[0].id);
+  const restaurant = restaurants.find(({ id }) => activeId === id);
 
   return (
     <div>
@@ -22,20 +23,15 @@ export const RestaurantsPage = () => {
         })}
       </ul>
       <hr></hr>
-      <ul>
-        {restaurants.map(
-          ({ id, name, menu, reviews }) =>
-            activeId === id && (
-              <Restaurant
-                id={id}
-                name={name}
-                menu={menu}
-                reviews={reviews}
-                key={id}
-              />
-            )
-        )}
-      </ul>
+      <div>
+        <Restaurant
+          id={restaurant.id}
+          name={restaurant.name}
+          menu={restaurant.menu}
+          reviews={restaurant.reviews}
+          key={restaurant.id}
+        />
+      </div>
     </div>
   );
 };
