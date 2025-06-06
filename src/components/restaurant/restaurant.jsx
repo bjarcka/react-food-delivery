@@ -3,7 +3,7 @@ import { Dish } from "../dish/dish";
 
 export const Restaurant = ({ id, name, menu, reviews }) => {
   return (
-    <li key={id}>
+    <div>
       <h2>{name}</h2>
       <h3>Menu</h3>
       <ul>
@@ -25,6 +25,6 @@ export const Restaurant = ({ id, name, menu, reviews }) => {
           </li>
         ))}
       </ul>
-    </li>
+    </div>
   );
 };

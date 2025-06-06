@@ -5,6 +5,7 @@ import { ReviewForm } from "../review-form/review-form";
 
 export const RestaurantsPage = () => {
   const [activeId, setActiveId] = useState(restaurants[0].id);
+  const restaurant = restaurants.find(({ id }) => activeId === id);
 
   return (
     <div>
@@ -23,6 +24,7 @@ export const RestaurantsPage = () => {
         })}
       </ul>
       <hr></hr>
+<<<<<<< HEAD
       <ul>
         {restaurants.map(
           ({ id, name, menu, reviews }) =>
@@ -38,6 +40,17 @@ export const RestaurantsPage = () => {
         )}
       </ul>
       <ReviewForm />
+=======
+      <div>
+        <Restaurant
+          id={restaurant.id}
+          name={restaurant.name}
+          menu={restaurant.menu}
+          reviews={restaurant.reviews}
+          key={restaurant.id}
+        />
+      </div>
+>>>>>>> main
     </div>
   );
 };
