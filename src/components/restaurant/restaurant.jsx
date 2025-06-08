@@ -1,9 +1,12 @@
 import { Review } from "../review/review";
 import { Dish } from "../dish/dish";
+import { ReviewForm } from "../review-form/review-form";
+import styles from "./restaurant.module.css";
+import { Reviews } from "../reviews/reviews";
 
-export const Restaurant = ({ id, name, menu, reviews }) => {
+export const Restaurant = ({ name, menu, reviews }) => {
   return (
-    <div>
+    <div className={styles.restaurant}>
       <h2>{name}</h2>
       <h3>Menu</h3>
       <ul>
@@ -17,14 +20,8 @@ export const Restaurant = ({ id, name, menu, reviews }) => {
           </li>
         ))}
       </ul>
-      <h3>Reviews</h3>
-      <ul>
-        {reviews?.map(({ id, user, text, rating }) => (
-          <li key={id}>
-            <Review user={user} text={text} rating={rating} />
-          </li>
-        ))}
-      </ul>
+      {reviews.length ? <Reviews reviews={reviews} /> : "no reviews"}
+      <ReviewForm />
     </div>
   );
 };

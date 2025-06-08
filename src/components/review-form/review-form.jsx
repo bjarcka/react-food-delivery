@@ -1,18 +1,27 @@
 import { useForm } from "./use-form";
+import { Counter } from "../counter/counter";
+import styles from "./review-form.module.css";
 
 export const ReviewForm = () => {
-  const { form, onNameChange, onTextChange, onAddressChange, clear } =
-    useForm();
+  const {
+    form,
+    onNameChange,
+    onTextChange,
+    onRatingDecrement,
+    onRatingIncrement,
+    clear,
+  } = useForm();
 
-  const { name, text, address } = form;
+  const { name, text, rating } = form;
 
   return (
     <form
+      className={styles.form}
       onSubmit={(event) => {
         event.preventDefault();
       }}
     >
-      <div>
+      <div className={styles.item}>
         <span>Name</span>
         <input
           type="text"
@@ -20,7 +29,7 @@ export const ReviewForm = () => {
           onChange={(event) => onNameChange(event.target.value)}
         />
       </div>
-      <div>
+      <div className={styles.item}>
         <span>Text</span>
         <input
           type="text"
@@ -30,14 +39,12 @@ export const ReviewForm = () => {
           }}
         />
       </div>
-      <div>
-        <span>Address</span>
-        <input
-          type="text"
-          value={address}
-          onChange={(event) => {
-            onAddressChange(event.target.value);
-          }}
+      <div className={styles.item}>
+        <span>Raiting</span>
+        <Counter
+          increment={onRatingIncrement}
+          decrement={onRatingDecrement}
+          value={rating}
         />
       </div>
       <button onClick={clear}>clear</button>

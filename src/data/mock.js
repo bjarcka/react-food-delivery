@@ -139,4 +139,23 @@ export const restaurants = [
       },
     ],
   },
+  {
+    id: "d9241927-09e1-44f3-8986-a76346869038",
+    name: "Piter Pen",
+    menu: [
+      {
+        id: "6c02c2ce-b868-4191-b4a7-8686429f4bac",
+        name: "Flat Iron Steak",
+        price: 10,
+        ingredients: ["beef"],
+      },
+      {
+        id: "99bb6fbb-e53b-4b7e-b9c2-23b63b77385d",
+        name: "Flat Iron Burger",
+        price: 10,
+        ingredients: ["bread", "beef"],
+      },
+    ],
+    reviews: [],
+  },
 ];
