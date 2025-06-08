@@ -1,10 +1,13 @@
 import { Restaurant } from "../restaurant/restaurant";
 import { useState } from "react";
 import { restaurants } from "../../data/mock";
+import { ReviewForm } from "../review-form/review-form";
 
 export const RestaurantsPage = () => {
-  const [activeId, setActiveId] = useState(restaurants[0].id);
-  const restaurant = restaurants.find(({ id }) => activeId === id);
+  const [activeRestaurantId, setActiveId] = useState(restaurants[0].id);
+  const activeRestaurant = restaurants.find(
+    ({ id }) => activeRestaurantId === id
+  );
 
   return (
     <div>
@@ -23,15 +26,15 @@ export const RestaurantsPage = () => {
         })}
       </ul>
       <hr></hr>
-      <div>
+      {activeRestaurant && (
         <Restaurant
-          id={restaurant.id}
-          name={restaurant.name}
-          menu={restaurant.menu}
-          reviews={restaurant.reviews}
-          key={restaurant.id}
+          id={activeRestaurant.id}
+          name={activeRestaurant.name}
+          menu={activeRestaurant.menu}
+          reviews={activeRestaurant.reviews}
+          key={activeRestaurant.id}
         />
-      </div>
+      )}
     </div>
   );
 };
