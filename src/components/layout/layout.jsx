@@ -3,7 +3,7 @@ import { ProgressBar } from "../progress-bar/progress-bar.jsx";
 
 export const Layout = ({ children }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.root}>
       <ProgressBar />
       <header className={styles.header}>APP HEADER</header>
       <main>{children}</main>
