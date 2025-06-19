@@ -35,6 +35,19 @@ export const RestaurantsPage = () => {
           key={activeRestaurant.id}
         />
       )}
+      <div className="allRestaurants">
+        {restaurants.map(({ name, id, menu, reviews }) => {
+          return (
+            <Restaurant
+              id={id}
+              name={name}
+              menu={menu}
+              reviews={reviews}
+              key={id}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

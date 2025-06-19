@@ -1,13 +1,13 @@
+import styles from "./layout.module.css";
+import { ProgressBar } from "../progress-bar/progress-bar.jsx";
+
 export const Layout = ({ children }) => {
   return (
-    <>
-      <header>
-        APP HEADER <hr></hr>
-      </header>
+    <div className={styles.wrapper}>
+      <ProgressBar />
+      <header className={styles.header}>APP HEADER</header>
       <main>{children}</main>
-      <footer>
-        <hr></hr>APP FOOTER
-      </footer>
-    </>
+      <footer className={styles.footer}>APP FOOTER</footer>
+    </div>
   );
 };

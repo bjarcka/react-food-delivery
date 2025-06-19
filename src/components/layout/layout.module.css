@@ -1,0 +1,15 @@
+.wrapper {
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  padding: 20px 0;
+  background: #e6d4d4;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #e6d4d4;
+}
