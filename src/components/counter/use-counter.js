@@ -1,17 +1,17 @@
 import { useState } from "react";
 
-export const useCounter = () => {
-  const [count, setCount] = useState(0);
+export const useCounter = ({ min = 0, max = 5 } = {}) => {
+  const [value, setCount] = useState(min);
 
-  const onIncrement = () => {
-    setCount(count + 1);
+  const increment = () => {
+    setCount(Math.min(value + 1, max));
   };
-  const onDecrement = () => {
-    setCount(count - 1);
+  const decrement = () => {
+    setCount(Math.max(value - 1, min));
   };
   return {
-    count,
-    onIncrement,
-    onDecrement,
+    value,
+    increment,
+    decrement,
   };
 };

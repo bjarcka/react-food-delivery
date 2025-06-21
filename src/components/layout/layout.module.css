@@ -1,0 +1,17 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  padding: 20px 0;
+  background: #faf3d3;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #faf3d3;
+}
